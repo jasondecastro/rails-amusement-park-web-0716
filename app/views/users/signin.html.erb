@@ -1,0 +1,58 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Amusement Park</title>
+    <link href="http://amusement-park.herokuapp.com/users/new/assets/application-2d5fee6a46971bce729d5547ebb874b9.css" media="all" rel="stylesheet" />
+    <script src="http://amusement-park.herokuapp.com/users/new/assets/application-4b0de0711661bf23189c85a9c617b786.js"></script>
+    <meta content="authenticity_token" name="csrf-param" />
+<meta content="8o7wtDVCSgkT82VO85sNH7/hAQKS5BkvTWRVstfUzfE=" name="csrf-token" />
+
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"></link>
+  </head>
+  <body>
+    <!--  navbar -->
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        <a class="navbar-brand" href="<%= root_path %>"/>Home</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+              <li><a href="/users/new">Sign Up</a></li>
+              <li><a href="/signin">Sign In</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <!-- content -->
+    <div class="container"  role="main">
+      <h1>Sign in</h1>
+
+<form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8o7wtDVCSgkT82VO85sNH7/hAQKS5BkvTWRVstfUzfE=" /></div>
+
+  <div class="field"> <label for="user_name">Name</label><br>
+  <input id="user_name" name="user[name]" type="text" /></div>
+
+  <div class="field"> <label for="password">Password</label><br>
+  <input id="password" name="user[password]" type="password" /></div>
+
+  <div class="actions">
+    <input name="commit" type="submit" value="Sign In" />
+  </div>
+</form>
+
+<a href="/users">Back</a>
+
+    </div>
+
+  </body>
+</html>
