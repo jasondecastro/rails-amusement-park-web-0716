@@ -21,9 +21,19 @@
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
         </div>
+
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-           <!--  nav here -->
+          <% if logged_in? %>
+           <li><a href="/users/23">Hello, aijfdsa!</a></li>
+              <li><a href="/attractions">Attractions</a></li>
+              <li><a data-method="delete" href="/signout" rel="nofollow">Log Out</a></li>
+          <% end %>
+
+          <% if !logged_in? %>
+           <li><a href="/users/new">Sign Up</a></li>
+              <li><a href="/signin">Sign In</a></li>
+          <% end %>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

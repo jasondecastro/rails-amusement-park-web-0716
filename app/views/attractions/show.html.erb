@@ -1,1 +1,11 @@
-show.html.erb
+<% @attraction.name %>
+<% if !admin? %>
+  <%= form_for @ride, url: '/attractions', action: 'create' do |f| %>
+  <%= f.hidden_field :attraction %>
+  <%= hidden_field_tag 'attraction', @attraction.id %> 
+  <%= f.submit "Go on this ride" %>
+  <% end %>
+  <% end %>
+<% if admin? %>
+<%= link_to "Edit" ,edit_attraction_path(@attraction) %>
+<% end %>

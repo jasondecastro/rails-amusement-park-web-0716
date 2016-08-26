@@ -37,18 +37,14 @@
     <div class="container"  role="main">
       <h1>Sign in</h1>
 
-<form accept-charset="UTF-8" action="/users" class="new_user" id="new_user" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="8o7wtDVCSgkT82VO85sNH7/hAQKS5BkvTWRVstfUzfE=" /></div>
+      <%= form_for @user, url: {action: "create"} do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name, id: "user_name" %><br />
+      <%= f.label :password %>
+      <%= f.password_field :password, id: "password" %><br />
+      <%= f.submit "Sign In" %>
+      <% end %>
 
-  <div class="field"> <label for="user_name">Name</label><br>
-  <input id="user_name" name="user[name]" type="text" /></div>
-
-  <div class="field"> <label for="password">Password</label><br>
-  <input id="password" name="user[password]" type="password" /></div>
-
-  <div class="actions">
-    <input name="commit" type="submit" value="Sign In" />
-  </div>
-</form>
 
 <a href="/users">Back</a>
 

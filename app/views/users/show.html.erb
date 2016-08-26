@@ -1,40 +1,5 @@
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Amusement Park</title>
-    <link href="http://amusement-park.herokuapp.com//assets/application-2d5fee6a46971bce729d5547ebb874b9.css" media="all" rel="stylesheet" />
-    <script src="http://amusement-park.herokuapp.com//assets/application-4b0de0711661bf23189c85a9c617b786.js"></script>
-    <meta content="authenticity_token" name="csrf-param" />
-<meta content="8o7wtDVCSgkT82VO85sNH7/hAQKS5BkvTWRVstfUzfE=" name="csrf-token" />
 
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"></link>
-  </head>
-  <body>
-    <!--  navbar -->
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <a class="navbar-brand" href="http://amusement-park.herokuapp.com/"/>Home</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-              <li><a href="<%= user_path(@user) %>">Hello, <%= @user.name %>!</a></li>
-              <li><a href="/attractions">Attractions</a></li>
-              <li><a data-method="delete" href="/signout" rel="nofollow">Log Out</a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-      </div>
-    </div>
-
-    <!-- content -->
-    <div class="container"  role="main">
       <p id="notice">Welcome back to the theme park!</p>
 
 
@@ -43,17 +8,20 @@
     <img src="http://8900-presscdn-0-84.pagely.netdna-cdn.com/wp-content/themes/beautycon/assets/img/avatar-grey.png" height="250">
   </div>
 
+    <% @user.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+    
+
+
   <div class="info">
       <p><strong>ADMIN</strong></p>
     <p><strong>Name:</strong> <%= @user.name %></p>
     <p><strong>Tickets:</strong> <%= @user.tickets %></p>
     <p><strong>Mood:</strong>  <%= @user.mood %></p>
     <p><strong>Height:</strong> <%= @user.height %> inches</p>
-    <p><a href="<%= edit_user_path(@user) %>">Edit</a></p>
+    
     <p><a href="/attractions">See attractions</a></p>
   </div>
 </div>
-    </div>
-
-  </body>
-</html>
+  
